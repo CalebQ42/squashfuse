@@ -4,7 +4,7 @@ go 1.21.5
 
 require (
 	github.com/CalebQ42/fuse v0.1.0
-	github.com/CalebQ42/squashfs v0.8.4
+	github.com/CalebQ42/squashfs v1.0.0
 	github.com/seaweedfs/fuse v1.2.3
 	golang.org/x/sys v0.15.0
 )
@@ -16,5 +16,3 @@ require (
 	github.com/therootcompany/xz v1.0.1 // indirect
 	github.com/ulikunitz/xz v0.5.11 // indirect
 )
-
-replace github.com/CalebQ42/squashfs => ../squashfs
