@@ -1,4 +1,4 @@
-package squashfs
+package squashfuse
 
 import (
 	"golang.org/x/sys/unix"

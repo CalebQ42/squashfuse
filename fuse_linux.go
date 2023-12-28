@@ -1,4 +1,4 @@
-package squashfs
+package squashfuse
 
 import "github.com/CalebQ42/fuse"
 
