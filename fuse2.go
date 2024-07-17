@@ -20,7 +20,7 @@ type Fuse2Mount struct {
 }
 
 func NewFuse2Mount(r *squashfs.Reader) *Mount {
-	return NewMountFromLow(r.Low)
+	return NewMountFromLow(&r.Low)
 }
 
 func NewFuse2MountFromLow(r *squashfslow.Reader) *Mount {
@@ -68,13 +68,13 @@ type squashFuse2 struct {
 
 func (s squashFuse2) Root() (fs.Node, error) {
 	return fileNode2{
-		FileBase: &s.r.Root.FileBase,
+		FileBase: s.r.Root.FileBase,
 		r:        s.r,
 	}, nil
 }
 
 type fileNode2 struct {
-	*squashfslow.FileBase
+	squashfslow.FileBase
 	r *squashfslow.Reader
 }
 
