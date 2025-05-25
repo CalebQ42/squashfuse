@@ -114,11 +114,11 @@ func (f fileNode) Readlink(ctx context.Context, req *fuse.ReadlinkRequest) (stri
 }
 
 func (f fileNode) Lookup(ctx context.Context, name string) (fs.Node, error) {
-	asFS, err := f.ToDir(f.r)
+	asFS, err := f.ToDir(*f.r)
 	if err != nil {
 		return nil, fuse.ENOTDIR
 	}
-	ret, err := asFS.Open(f.r, name)
+	ret, err := asFS.Open(*f.r, name)
 	if err != nil {
 		return nil, fuse.ENOENT
 	}
