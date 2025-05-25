@@ -156,7 +156,7 @@ func (f fileNode) Read(ctx context.Context, req *fuse.ReadRequest, resp *fuse.Re
 }
 
 func (f fileNode) ReadDirAll(ctx context.Context) (out []fuse.Dirent, err error) {
-	asFS, err := f.ToDir(f.r)
+	asFS, err := f.ToDir(*f.r)
 	if err != nil {
 		return nil, fuse.ENOTDIR
 	}
